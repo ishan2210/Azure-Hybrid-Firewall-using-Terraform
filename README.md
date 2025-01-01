@@ -6,7 +6,9 @@ The architecture uses a hybrid setup with Azure Firewall, VNet-to-VNet connectio
 The Terraform code defines and provisions the necessary resources to build the architecture.
 
 Terraform Files Structure
+
 .
+
 ├── main.tf
 
 ├── variables.tf
