@@ -8,11 +8,8 @@ The Terraform code defines and provisions the necessary resources to build the a
 Terraform Files Structure
 
 ├── main.tf
-
 ├── variables.tf
-
 ├── terraform.tfvars
-
 └── README.md
 
 main.tf
