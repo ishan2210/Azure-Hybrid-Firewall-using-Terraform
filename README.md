@@ -47,6 +47,7 @@ Defines input parameters such as the names of resources, network configurations,
 Ensures flexibility and reusability of the Terraform code by using variables for key settings like IP address ranges, resource names, and more.
 
 terraform.tfvars
+
 The terraform.tfvars file initializes the values of the variables defined in variables.tf. This is where you provide values for variables such as:
 
 Resource names: Define names for Vmname, sku, configure ranges for private IPs and public IPs and other resources.
