@@ -38,6 +38,8 @@ IP Addresses: Assigns IP addresses to VMs and interfaces.
 
 Route Tables: Configures route tables to manage traffic routing between VNets.
 
+![image](https://github.com/user-attachments/assets/9b4fe695-b554-4c7a-afef-e1f3737b956f)
+
 variables.tf
 
 The variables.tf file defines all the variables that are used in the deployment:
@@ -53,8 +55,5 @@ The terraform.tfvars file initializes the values of the variables defined in var
 Resource names: Define names for Vmname, sku, configure ranges for private IPs and public IPs and other resources.
 
 IP Addresses: Configure ranges for private IPs and public IPs where necessary.
-
-
-![image](https://github.com/user-attachments/assets/9b4fe695-b554-4c7a-afef-e1f3737b956f)
 
 
