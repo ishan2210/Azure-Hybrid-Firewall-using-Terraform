@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the repository containing Terraform code
-                git branch: 'main', url: 'https://github.com/ishan2210/Azure-Hybrid-Firewall-using-Terraform.git'
+                git branch: 'main', url: 'https://github.com/your-repo/terraform-azure.git'
             }
         }
 
@@ -29,15 +29,27 @@ pipeline {
 
         stage('Plan Terraform') {
             steps {
-                // Run terraform plan to check the infrastructure changes
-                sh 'terraform plan -out=tfplan'
+                // Pass the variables to terraform plan command
+                sh '''
+                terraform plan -out=tfplan \
+                    -var "AZURE_CLIENT_ID=$AZURE_CLIENT_ID" \
+                    -var "AZURE_CLIENT_SECRET=$AZURE_CLIENT_SECRET" \
+                    -var "AZURE_TENANT_ID=$AZURE_TENANT_ID" \
+                    -var "AZURE_SUBSCRIPTION_ID=$AZURE_SUBSCRIPTION_ID"
+                '''
             }
         }
 
         stage('Apply Terraform') {
             steps {
-                // Apply the Terraform plan
-                sh 'terraform apply -auto-approve tfplan'
+                // Pass the variables to terraform apply command
+                sh '''
+                terraform apply -auto-approve tfplan \
+                    -var "AZURE_CLIENT_ID=$AZURE_CLIENT_ID" \
+                    -var "AZURE_CLIENT_SECRET=$AZURE_CLIENT_SECRET" \
+                    -var "AZURE_TENANT_ID=$AZURE_TENANT_ID" \
+                    -var "AZURE_SUBSCRIPTION_ID=$AZURE_SUBSCRIPTION_ID"
+                '''
             }
         }
     }
