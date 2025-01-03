@@ -204,8 +204,8 @@ resource "azurerm_virtual_network_peering" "hub_to_spoke" {
   allow_forwarded_traffic      = true
   allow_gateway_transit        = true
 
- timeouts {
-    create = "20m"
+   timeouts {
+    create = "40m"
   }
 
   depends_on = [ azurerm_virtual_network.Vnet01,azurerm_virtual_network.Vnet02 ]
