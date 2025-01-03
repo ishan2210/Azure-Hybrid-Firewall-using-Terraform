@@ -7,11 +7,6 @@ provider "azurerm" {
   client_secret   = var.AZURE_CLIENT_SECRET
 }
 
-variable "AZURE_TENANT_ID" {}
-variable "AZURE_SUBSCRIPTION_ID" {}
-variable "AZURE_CLIENT_ID" {}
-variable "AZURE_CLIENT_SECRET" {}
-
 
 #defining the Resource Group Hybrid-RG
 resource "azurerm_resource_group" "Hybrid-RG" {
