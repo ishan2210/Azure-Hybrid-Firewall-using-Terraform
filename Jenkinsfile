@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the repository containing Terraform code
-                git branch: 'main', url: 'https://github.com/your-repo/terraform-azure.git'
+                git branch: 'main', url: 'https://github.com/ishan2210/Azure-Hybrid-Firewall-using-Terraform.git'
             }
         }
 
