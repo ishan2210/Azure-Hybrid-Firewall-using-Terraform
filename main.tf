@@ -1,3 +1,16 @@
+#defining resources for jenkins pipeline
+provider "azurerm" {
+  features {}
+
+  # If using environment variables or Jenkins credentials
+  client_id       = var.AZURE_CLIENT_ID
+  client_secret   = var.AZURE_CLIENT_SECRET
+  tenant_id       = var.AZURE_TENANT_ID
+  subscription_id = var.AZURE_SUBSCRIPTION_ID
+}
+
+
+
 #defining the Resource Group Hybrid-RG
 resource "azurerm_resource_group" "Hybrid-RG" {
 
