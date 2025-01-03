@@ -165,6 +165,10 @@ resource "azurerm_virtual_network_gateway" "onprem_gateway" {
     public_ip_address_id          = azurerm_public_ip.Onprem-gw-pip.id
     subnet_id                     = azurerm_subnet.Onpremgatewaysubnet.id
   }
+  timeouts {
+    create = "60m"  # Extend creation timeout to 60 minutes
+    delete = "30m"
+    }
 
   depends_on = [ azurerm_subnet.Onpremgatewaysubnet ]
 }
@@ -183,6 +187,10 @@ resource "azurerm_virtual_network_gateway" "hub_gateway" {
     public_ip_address_id          = azurerm_public_ip.hub-gw-pip.id
     subnet_id                     = azurerm_subnet.hybridgatewaysubnet.id
   }
+   timeouts {
+    create = "60m"  # Extend creation timeout to 60 minutes
+    delete = "30m"
+    }
 
   depends_on = [ azurerm_subnet.hybridgatewaysubnet ]
 }
