@@ -1,24 +1,3 @@
-variable "AZURE_TENANT_ID" {
-  description = "Azure Tenant ID"
-  type        = string
-}
-
-variable "AZURE_SUBSCRIPTION_ID" {
-  description = "Azure Subscription ID"
-  type        = string
-}
-
-variable "AZURE_CLIENT_ID" {
-  description = "Azure Client ID"
-  type        = string
-}
-
-variable "AZURE_CLIENT_SECRET" {
-  description = "Azure Client Secret"
-  type        = string
-}
-
-
 #defining resources for jenkins pipeline
 provider "azurerm" {
   features {}
