@@ -14,22 +14,33 @@ pipeline {
         }
         stage('Initialize Terraform') {
             steps {
-                sh '''
-                az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID
-                terraform init
-                '''
+                script {
+                    sh '''
+                    az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID
+                    terraform init
+                    '''
+                }
             }
         }
         stage('Plan Terraform') {
             steps {
-                sh 'terraform plan -out=tfplan'
+                script {
+                    sh '''
+                    terraform plan -out=tfplan
+                    '''
+                }
             }
         }
         stage('Apply Terraform') {
             steps {
-                sh 'terraform apply -auto-approve tfplan'
+                script {
+                    sh '''
+                    terraform apply -auto-approve tfplan
+                    '''
+                }
             }
         }
     }
 }
+
 
