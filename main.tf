@@ -243,9 +243,10 @@ resource "azurerm_virtual_network_peering" "hub_to_spoke" {
   allow_forwarded_traffic      = true
   allow_gateway_transit        = true
 
-   timeouts {
-    create = "40m"
-  }
+  timeouts {
+    create = "60m"  # Extend creation timeout to 60 minutes
+    delete = "30m"
+    }
 
   depends_on = [ azurerm_virtual_network.Vnet01,azurerm_virtual_network.Vnet02 ]
 }
@@ -259,8 +260,9 @@ resource "azurerm_virtual_network_peering" "spoke_to_hub" {
   allow_forwarded_traffic      = true
   use_remote_gateways          = true
    timeouts {
-    create = "20m"
-  }
+    create = "60m"  # Extend creation timeout to 60 minutes
+    delete = "30m"
+    }
   depends_on = [ azurerm_virtual_network.Vnet01, azurerm_virtual_network.Vnet02 ]
 }
 
